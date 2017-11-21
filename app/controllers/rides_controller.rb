@@ -3,7 +3,11 @@ class RidesController < ApplicationController
 
   def create
     @ride  = Ride.new(ride_params)
-    @ride.take_ride
+    message = @ride.take_ride
+    
+    if message != true
+      flash[:alert] = message
+    end
     redirect_to user_path(@current_user)
   end
 
