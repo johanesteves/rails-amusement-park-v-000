@@ -1,0 +1,13 @@
+<h1><%=@attraction.name%> </h1>
+
+<p>Nausea Rating: <%=@attraction.nausea_rating %></p>
+<p>Happiness Rating: <%=@attraction.happiness_rating %></p>
+<p>Tickets: <%=@attraction.tickets %></p>
+<p>Min Heights:<%=@attraction.min_height %></p>
+
+
+<%=form_for(@ride, method: :post) do |f| %>
+    <%=f.hidden_field :attraction_id, value: @attraction.id %>
+    <%=f.hidden_field :user_id, value: @current_user.id%>
+    <%=f.submit "Go on this ride" %>
+<% end %>

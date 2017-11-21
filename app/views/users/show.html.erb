@@ -1,0 +1,8 @@
+<h1>Hello <%= @current_user.name %> !</h1>
+<%= "ADMIN" if @current_user.admin %> <br>
+
+Mood: <p><%=@current_user.mood%></p>
+Tickets: <p><%=@current_user.tickets%></p>
+Height: <p><%=@current_user.height%></p>
+
+<h4><%=link_to "See attractions", attractions_path %></h4>
